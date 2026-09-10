@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "FedTriad: Personalized Medical Federated Learning"
+type: software
+authors:
+  - family-names: Xia
+    given-names: Zhenhang
+version: 1.0.0
+date-released: 2026-09-10
+license: MIT
+repository-code: "https://github.com/zeroling/FedTriad"
+url: "https://github.com/zeroling/FedTriad"
+abstract: >-
+  A research implementation of parallel-serial-local complementary federated
+  learning with global class-risk calibration for medical image classification.

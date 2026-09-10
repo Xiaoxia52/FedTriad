@@ -1,0 +1,37 @@
+{
+  "base": {
+    "image_size": 28,
+    "allow_resize": false,
+    "device": "cuda:0",
+    "cache_dir": ".cache/medmnist",
+    "cpu_threads": 2,
+    "workers": 0,
+    "clients": 5,
+    "participation_rate": 0.6,
+    "local_test_fraction": 0.2,
+    "calibration_fraction": 0.0,
+    "rounds": 300,
+    "local_epochs": 1,
+    "batch_size": 64,
+    "lr": 0.01,
+    "lr_schedule": "multistep",
+    "lr_decay_fractions": "0.6,0.85",
+    "lr_decay_gamma": 0.1,
+    "momentum": 0.0,
+    "weight_decay": 0.0005,
+    "eval_every": 1,
+    "selection_metric": "macro_f1",
+    "feature_dim": 128,
+    "width": 32,
+    "triad_max_grad_norm": 5.0
+  },
+  "datasets": {
+    "bloodmnist": { "data_file": "data/bloodmnist.npz" },
+    "organamnist": { "data_file": "data/organamnist.npz" },
+    "pathmnist": { "data_file": "data/pathmnist.npz" }
+  },
+  "variants": ["p_only", "ps_uniform", "pl_uniform", "psl_uniform"],
+  "seeds": [0, 1, 2],
+  "alphas": [0.5, 0.1],
+  "output_root": "runs/fedtriad_3datasets_300r_ablations"
+}
