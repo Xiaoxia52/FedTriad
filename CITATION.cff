@@ -8,8 +8,8 @@ authors:
 version: 1.0.0
 date-released: 2026-09-10
 license: MIT
-repository-code: "https://github.com/zeroling/FedTriad"
-url: "https://github.com/zeroling/FedTriad"
+repository-code: "https://github.com/Xiaoxia52/FedTriad"
+url: "https://github.com/Xiaoxia52/FedTriad"
 abstract: >-
   A research implementation of parallel-serial-local complementary federated
   learning with global class-risk calibration for medical image classification.

@@ -6,7 +6,7 @@ their originating clients and exchanges model states plus compact class-risk
 statistics. This repository reproduces the method and ablations reported for
 BloodMNIST, OrganAMNIST, and PathMNIST at their native 28 x 28 resolution.
 
-Repository: <https://github.com/zeroling/FedTriad>
+Repository: <https://github.com/Xiaoxia52/FedTriad>
 
 > **Privacy scope.** Keeping images local avoids centralizing raw records, but
 > ordinary model/statistic exchange is not a formal privacy guarantee. Add
