@@ -1,0 +1,72 @@
+{
+  "file": "READER_SUPPLIED_DATA_FILE",
+  "file_bytes": 35461855,
+  "mtime_ns": 1786788676000000000,
+  "arrays": {
+    "train_images": {
+      "shape": [
+        11959,
+        28,
+        28,
+        3
+      ],
+      "dtype": "uint8",
+      "crc32": 619472455,
+      "uncompressed_bytes": 28127696
+    },
+    "train_labels": {
+      "shape": [
+        11959,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 2762019723,
+      "uncompressed_bytes": 12087
+    },
+    "val_images": {
+      "shape": [
+        1712,
+        28,
+        28,
+        3
+      ],
+      "dtype": "uint8",
+      "crc32": 3519939748,
+      "uncompressed_bytes": 4026752
+    },
+    "val_labels": {
+      "shape": [
+        1712,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 3480972673,
+      "uncompressed_bytes": 1840
+    },
+    "test_images": {
+      "shape": [
+        3421,
+        28,
+        28,
+        3
+      ],
+      "dtype": "uint8",
+      "crc32": 4151710884,
+      "uncompressed_bytes": 8046320
+    },
+    "test_labels": {
+      "shape": [
+        3421,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 3245831174,
+      "uncompressed_bytes": 3549
+    }
+  },
+  "dataset": "bloodmnist",
+  "image_size": 28,
+  "smoke_samples": 0,
+  "cache_version": 1,
+  "resize": "none"
+}

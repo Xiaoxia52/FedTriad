@@ -1,0 +1,72 @@
+{
+  "file": "READER_SUPPLIED_DATA_FILE",
+  "file_bytes": 205615438,
+  "mtime_ns": 1786788722000000000,
+  "arrays": {
+    "train_images": {
+      "shape": [
+        89996,
+        28,
+        28,
+        3
+      ],
+      "dtype": "uint8",
+      "crc32": 1104818790,
+      "uncompressed_bytes": 211670720
+    },
+    "train_labels": {
+      "shape": [
+        89996,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 1283494081,
+      "uncompressed_bytes": 90124
+    },
+    "val_images": {
+      "shape": [
+        10004,
+        28,
+        28,
+        3
+      ],
+      "dtype": "uint8",
+      "crc32": 1002489978,
+      "uncompressed_bytes": 23529536
+    },
+    "val_labels": {
+      "shape": [
+        10004,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 3956904655,
+      "uncompressed_bytes": 10132
+    },
+    "test_images": {
+      "shape": [
+        7180,
+        28,
+        28,
+        3
+      ],
+      "dtype": "uint8",
+      "crc32": 2914141835,
+      "uncompressed_bytes": 16887488
+    },
+    "test_labels": {
+      "shape": [
+        7180,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 556420596,
+      "uncompressed_bytes": 7308
+    }
+  },
+  "dataset": "pathmnist",
+  "image_size": 28,
+  "smoke_samples": 0,
+  "cache_version": 1,
+  "resize": "none"
+}

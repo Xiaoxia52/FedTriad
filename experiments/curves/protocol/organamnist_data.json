@@ -1,0 +1,69 @@
+{
+  "file": "READER_SUPPLIED_DATA_FILE",
+  "file_bytes": 38247708,
+  "mtime_ns": 1786788674000000000,
+  "arrays": {
+    "train_images": {
+      "shape": [
+        34561,
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "crc32": 3273620924,
+      "uncompressed_bytes": 27095952
+    },
+    "train_labels": {
+      "shape": [
+        34561,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 2877768615,
+      "uncompressed_bytes": 34689
+    },
+    "val_images": {
+      "shape": [
+        6491,
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "crc32": 963146564,
+      "uncompressed_bytes": 5089072
+    },
+    "val_labels": {
+      "shape": [
+        6491,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 3241497549,
+      "uncompressed_bytes": 6619
+    },
+    "test_images": {
+      "shape": [
+        17778,
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "crc32": 1453521349,
+      "uncompressed_bytes": 13938080
+    },
+    "test_labels": {
+      "shape": [
+        17778,
+        1
+      ],
+      "dtype": "uint8",
+      "crc32": 2897700664,
+      "uncompressed_bytes": 17906
+    }
+  },
+  "dataset": "organamnist",
+  "image_size": 28,
+  "smoke_samples": 0,
+  "cache_version": 1,
+  "resize": "none"
+}

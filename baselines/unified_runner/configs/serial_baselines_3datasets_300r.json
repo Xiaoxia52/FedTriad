@@ -1,0 +1,38 @@
+{
+  "base": {
+    "image_size": 28,
+    "allow_resize": false,
+    "device": "cuda:0",
+    "cache_dir": "../../.cache/medmnist",
+    "cpu_threads": 2,
+    "workers": 0,
+    "clients": 5,
+    "participation_rate": 0.6,
+    "local_test_fraction": 0.2,
+    "calibration_fraction": 0.0,
+    "rounds": 300,
+    "local_epochs": 1,
+    "head_epochs": 1,
+    "batch_size": 64,
+    "lr": 0.01,
+    "head_lr": 0.01,
+    "lr_schedule": "multistep",
+    "lr_decay_fractions": "0.6,0.85",
+    "lr_decay_gamma": 0.1,
+    "momentum": 0.0,
+    "weight_decay": 0.0005,
+    "selection_metric": "macro_f1",
+    "feature_dim": 128,
+    "width": 32,
+    "fedseq_superclients": 2
+  },
+  "datasets": {
+    "bloodmnist": { "data_file": "../../data/bloodmnist.npz" },
+    "organamnist": { "data_file": "../../data/organamnist.npz" },
+    "pathmnist": { "data_file": "../../data/pathmnist.npz" }
+  },
+  "algorithms": ["cwt", "fedseq"],
+  "seeds": [0, 1, 2],
+  "alphas": [0.5, 0.1],
+  "output_root": "../../runs/supplementary_serial_baselines_300r"
+}

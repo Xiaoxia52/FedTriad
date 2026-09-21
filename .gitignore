@@ -37,3 +37,11 @@ validation/
 *.tmp
 *.partial
 run.lock
+
+# Reproducibility-package outputs (source code and the checked-in summary CSV
+# remain tracked; generated figures, exports, checkpoints and archives do not).
+experiments/curves/results_export/
+experiments/curves/FedTriad_CURVES_RESULTS.zip
+experiments/curves/PACKAGE_MANIFEST.json
+figures/curves/FedTriad_validation_curves_6panels.*
+figures/curves/FedTriad_validation_curves_6panels_manifest.json

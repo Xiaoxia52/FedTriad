@@ -17,13 +17,13 @@ Repository: <https://github.com/Xiaoxia52/FedTriad>
 
 FedTriad contains two components:
 
-1. **Parallel--Serial--Local (PSL) complementary learning.** The parallel path
+1. **Parallel--Sequential--Local (PSL) complementary learning.** The parallel path
    `P` learns population consensus with sample-size-weighted FedAvg; one
-   persistent serial path `S` visits active hospitals in a rotating order; and
+   persistent sequential path `S` visits active hospitals in a rotating order; and
    every hospital owns a private persistent local path `L` that is never
    uploaded. The three paths use the same network architecture and ordinary
    end-to-end classification gradients.
-2. **Global Class-Risk Calibration.** Each client uploads per-class negative
+2. **Class-risk-guided prediction fusion.** Each client uploads per-class negative
    log-likelihood sums for P/S/L and per-class counts. The server aggregates
    these `4C` scalars per client into a class-conditioned risk memory. At
    inference, historical class risk and current predictive uncertainty produce
@@ -52,6 +52,11 @@ For development and tests:
 ```powershell
 python -m pip install -r requirements-dev.txt
 ```
+
+The 11-method comparison runner has a separate dependency set because its
+FedPAC implementation uses SciPy. Install
+[`baselines/unified_runner/requirements.txt`](baselines/unified_runner/requirements.txt)
+from that directory only when reproducing the baseline suite.
 
 ## Data
 
@@ -106,6 +111,42 @@ Training artifacts are written under `runs/`; final risk-evaluation summaries
 are written under `output/final-global-class-risk/`. Both directories are
 ignored by Git.
 
+## Reproduce the reported extensions
+
+The curve package is isolated under
+[`experiments/curves/`](experiments/curves/). It uses the frozen PSL
+partitions in that directory and accepts a reader-supplied `--data-dir`:
+
+```powershell
+python -u .\experiments\curves\RUN_CURVES.py --data-dir D:\datasets\medmnist --job 2 --preview
+```
+
+Remove `--preview` for the 18 CUDA curve runs. See
+[`experiments/curves/README.md`](experiments/curves/README.md) for resume and
+export details. The package uses the independent `fedtriad_curves` namespace;
+it does not alter the base `fedtriad` imports.
+
+The P-only and Three-P supplementary controls are launched from
+[`RUN_SUPPLEMENT_C.py`](RUN_SUPPLEMENT_C.py). They require completed base
+`p_only`/`psl_uniform` runs and a prepared cache, supplied with
+`--base-runs`, `--cache-root`, and the reader's `--data-dir`; none of those
+artifacts are included here:
+
+```powershell
+python -u .\RUN_SUPPLEMENT_C.py --preview `
+  --data-dir D:\datasets\medmnist `
+  --base-runs D:\fedtriad-runs\fedtriad_3datasets_300r_ablations `
+  --cache-root D:\fedtriad-cache\medmnist
+```
+
+See [`experiments/fedtriad_supplement_c/README.md`](experiments/fedtriad_supplement_c/README.md)
+for the matched and unmatched dimensions of the controls.
+
+The checked-in curve summary at
+[`figures/curves/source_data_mean_sd.csv`](figures/curves/source_data_mean_sd.csv)
+can be redrawn with the parameterized plotting script in the same directory.
+It is a small aggregate table, not a dataset or a training log.
+
 ## Tests
 
 ```powershell
@@ -119,6 +160,10 @@ aggregation, and normalized risk-guided fusion.
 ## Repository layout
 
 ```text
+experiments/curves/              Isolated 300-round validation-curve package
+experiments/fedtriad_supplement_c/  P-only and Three-P control implementation
+baselines/unified_runner/        Self-contained 11-method comparison runner
+figures/curves/                  Parameterized plotter and aggregate curve CSV
 fedtriad/                       Core method, data, metrics, runner, and suite
 configs/                        Locked three-dataset 300-round configuration
 docs/                           Method and ablation contract
